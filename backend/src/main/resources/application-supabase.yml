@@ -1,0 +1,19 @@
+spring:
+  datasource:
+    # Replace [PASSWORD] and [PROJECT_REF] with your Supabase credentials:
+    url: jdbc:postgresql://db.${SUPABASE_DB_HOST:gmgobcygjwmmsaeavhxh.supabase.co}:5432/postgres?sslmode=require
+    username: ${SUPABASE_DB_USER:postgres}
+    password: ${SUPABASE_DB_PASSWORD:}
+    driverClassName: org.postgresql.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+        jdbc:
+          lob:
+            non_contextual_creation: true
+
